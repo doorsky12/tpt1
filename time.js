@@ -1,4 +1,3 @@
-// DOM 요소가 모두 로드된 후 실행되도록 합니다.
 document.addEventListener("DOMContentLoaded", () => {
     function updateTime() {
         const timeZones = {
@@ -16,15 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     hour: '2-digit', 
                     minute: '2-digit', 
                     second: '2-digit',
-                    hour12: false  // 24시간 표기법을 사용합니다.
+                    hour12: false // 24시간 표기법을 사용합니다.
                 });
+                console.log(`${city}: ${currentTime}`); // 디버깅 로그 추가
                 timeElement.textContent = currentTime;
             }
         });
     }
 
-    // 초기 시간 설정
     updateTime();
-    // 1초마다 시간 업데이트
     setInterval(updateTime, 1000);
 });
+
